@@ -10,11 +10,11 @@ Finally, I created a template HTML file called index.html that will take the mar
 
 Data Sources:
 
-Mars News - [NASA Mars News Site](https://mars.nasa.gov/news/)
-Featured Mars Image -[NASA Mars Image Website](https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars)
-Mars Weather - [Mars Weather Twitter Account](https://twitter.com/marswxreport?lang=en)
-Mars Facts - [Mars Facts webpage](https://space-facts.com/mars/)
-Mars Hemispheres - [USGS Astrogeology](https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars)
+Mars News - [NASA Mars News Site](https://mars.nasa.gov/news/) 
+Featured Mars Image -[NASA Mars Image Website](https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars) 
+Mars Weather - [Mars Weather Twitter Account](https://twitter.com/marswxreport?lang=en) 
+Mars Facts - [Mars Facts webpage](https://space-facts.com/mars/) 
+Mars Hemispheres - [USGS Astrogeology](https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars) 
 
 
 Screeen Capture of webpage:
