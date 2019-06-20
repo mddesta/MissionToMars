@@ -47,9 +47,11 @@ def scrape_image():
         response=soup.find('article')['style']
         response=response.replace('background-image: url(',"").replace(');','')
         response=response[2:-1]
-
         featured_image=main_url+response
+        
+        image_title=soup.find('h1', class_="media_feature_title").text
         mars_info["featured_image"]=featured_image
+        mars_info["image_title"]=image_title
 
         return mars_info
     finally:
