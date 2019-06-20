@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mission To Mars</title>
+    <!-- Adding Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Adding css-->
+    <style>
+h1{
+    font-family: 'Courier New', Courier, monospace;
+    font-display: bolder;
+    color: white
+
+}
+.jumbotron{
+    background-image: url("https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA14293_hires.jpg");
+    background-size: cover;
+    margin: 30px;
+    height: 400px;
+}
+body{
+    background-image: url("https://wallpaperplay.com/walls/full/4/e/f/54110.jpg");
+    background-size: cover;
+}
+h4{
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+}
+#Marscontent{
+    background:#42444e;
+}footer{
+    background:#42444e;color: white;
+    text-align: center;
+    position: sticky;
+    width: 100%;
+    margin-top: 15px
+}
+.data{
+    margin: 0;
+    padding: 0;
+}
+    </style>
+</head>
+<body>
+    <!-- Adding top Banner-->
+    <div class="container-fluid">
+        <div class="jumbotron" >
+            <div>
+                <h1 id="header" class="text-right" ><strong>Mission To Mars</Strong></h1>
+                <p class="text-right">
+                    <a class="btn" href="/scrape" role="button" style="color: white; background: #42444e">Scrape New Data</a>
+                </p>   
+            </div>
+        </div>
+
+
+    <!-- Adding Latest News-->
+    <div class="container Marscontent">
+        <section class="row" >
+            <div class="col-md-12 text-white" style="font-family: 'Courier New', Courier, monospace;">
+                <h4>Latest Mars News</h4>
+                <h6>{{mars_info.news_title}}</h6>
+                <p>{{mars_info.news_paragraph}}</p>
+            </div>
+        </section>
+    </div> 
+    <div class="container">
+        <section class="row">
+            <!-- Adding featured image-->
+            <div class="col-md-6">
+                <h4>Featured Mars Image</h4>
+                <img style="max-width:100%; max-height: auto;" src="{{mars_info.featured_image}}" alt="Featured Mars Image">
+            </div>
+            <!-- Adding current weather and Mars Facts-->
+            <div class="col-md-6 data">
+                <div class="col-md-12 text-white" style="font-family: 'Courier New', Courier, monospace;">
+                    <h4>Current Weather on Mars</h4>
+                    <p>{{mars_info.weather}}</p>
+                </div>
+                <div class="col-md-12">
+                    <h4 >Mars Facts</h4>
+                    <div class="text-white" style="font-family: 'Courier New', Courier, monospace;">{{mars_info.mars_facts|safe}}</div>
+                </div>
+            </div>
+        </section>
+    </div> 
+    <!-- Adding hemispheres-->
+    <div class="container">
+        <div class="row" >
+            <title class="col-md-12">
+                <h4 class="text-center">Mars Hemispheres</h4>
+                <hr>
+            </title>
+            {%for item in mars_info.hemispheres%}
+            <div class="col-md-6">
+                <div class="card text-white bg-dark" style="margin: 30px;">
+                    <img class="card-img-top" src="{{ item.img_url }}" />
+                    <div class="card-body">
+                        <p class="card-text">{{ item.title }}</p>
+                    </div>
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+    </div>
+    <footer class="footer">
+            <div class="container">
+              <span>© Copyright Meron Desta 2019</span>
+            </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous">
+    </script> 
+</body>
+</html>
