@@ -89,6 +89,7 @@ def scrape_facts():
 
         tables = pd.read_html(facts_url)
         facts=tables[0]
+        facts.drop('Earth', axis=1, inplace=True)
         facts.columns=['Description',"Value"]
         facts.set_index('Description', inplace=True)
 
