@@ -8,9 +8,10 @@ def init_browser():
     return Browser('chrome', **executable_path, headless=False)
 
 mars_info={}
-# Scrape latest news
-def scrape_news():
+
+def scrape_data():
     try:
+        # Scrape latest news
         browser=init_browser()
         news_url="https://mars.nasa.gov/news/"
 
@@ -27,13 +28,7 @@ def scrape_news():
         mars_info["news_title"]=news_title
         mars_info['news_paragraph']=news_p
 
-        return mars_info
-    finally:
-        browser.quit()
-# scraping Mars featured image.
-def scrape_image():
-    try:
-        browser=init_browser()
+        # scraping Mars featured image.
         image_url="https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars"
 
         browser.visit(image_url)
@@ -53,34 +48,19 @@ def scrape_image():
         mars_info["featured_image"]=featured_image
         mars_info["image_title"]=image_title
 
-        return mars_info
-    finally:
-        browser.quit()
-#scraping Mars Weather
-def scrape_weather():
-    try:
-        browser=init_browser()
+        #scraping Mars Weather
         weather_url="https://twitter.com/marswxreport?lang=en"
 
         browser.visit(weather_url)
-
         time.sleep(1)
 
         weather=browser.html
         soup=BeautifulSoup(weather, 'html.parser')
 
-        mars_weather=soup.find('p', class_='js-tweet-text').text.replace("InSight ","").replace('sol',"Sol")
-
+        mars_weather=soup.find('p', class_='js-tweet-text').text
         mars_info["weather"]=mars_weather
 
-        return mars_info
-
-    finally:
-        browser.quit()
-#scraping Mars Facts
-def scrape_facts():
-    try:
-        browser=init_browser()
+        #scraping Mars Facts
         facts_url="https://space-facts.com/mars/"
 
         browser.visit(facts_url)
@@ -97,13 +77,7 @@ def scrape_facts():
 
         mars_info['mars_facts']=facts_html
 
-        return mars_info
-    finally:
-        browser.quit()
-#scrapping Hemispheres
-def scrape_hemispheres():
-    try:
-        browser=init_browser()
+        #scrapping Hemispheres
         hemisphere_url="https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars"
 
         browser.visit(hemisphere_url)
