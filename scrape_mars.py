@@ -22,9 +22,11 @@ def scrape_data():
 
         news_title=soup.find('div', class_='content_title').find('a').text
         news_p=soup.find('div', class_='article_teaser_body').text
+        news_url=soup.find('div', class_='content_title').find('a')['href']
 
         mars_info["news_title"]=news_title
         mars_info['news_paragraph']=news_p
+        mars_info['news_url']=news_url
 
         # scraping Mars featured image.
         image_url="https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars"
