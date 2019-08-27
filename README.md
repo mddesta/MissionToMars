@@ -1,14 +1,18 @@
 # Mission To Mars 
 
-For this assignment, I scraped data from various websites for data related to the Mission to Mars and displays the information in a single HTML page. The initial scraping was completed using Notebook, BeautifulSoup, Pandas, and Requests/Splinter. 
+## Background 
+For this assignment, Data from various websites was scrapped for information related to the Mission to Mars. The information was then displayed in a single HTML page. 
 
-Once I was able to scrape the information needed, I converted the Jupyter notebook into a Python script called scrape_mars.py with a function called scrape that executes all of your scraping code and return one Python dictionary containing all of the scraped data.
+## Technologies
 
-Next, I created a route called /scrape that will import my scrape_mars.py script and call the scrape function. The return value was stored in Mongo as a Python dictionary. I also created a root route / that will query the Mongo database and pass the mars data into an HTML template to display the data.
+* JupyterNotebook
+* BeautifulSoup
+* Pandas
+* Requests/Splinter. 
+* HTML
+* CSS
 
-Finally, I created a template HTML file called index.html that will take the mars data dictionary and display all of the data in the appropriate HTML elements.
-
-Data Sources:
+## Data Sources
 
 Mars News - [NASA Mars News Site](https://mars.nasa.gov/news/) 
 
