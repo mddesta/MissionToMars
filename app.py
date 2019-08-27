@@ -5,7 +5,7 @@ import scrape_mars
 
 app = Flask(__name__)
 
-app.config["MONGO_URI"] = "mongodb://localhost:27017/mars_app"
+app.config["MONGO_URI"] = "mongodb://<dbuser>:<dbpassword>@ds353007.mlab.com:53007/heroku_vvpt4f2t"
 mongo=PyMongo(app)
 
 @app.route("/")
