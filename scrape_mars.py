@@ -16,8 +16,6 @@ def scrape_data():
         news_url="https://mars.nasa.gov/news/"
 
         browser.visit(news_url)
-
-        time.sleep(1)
         
         html=browser.html
         soup=BeautifulSoup(html, 'html.parser')
@@ -32,8 +30,6 @@ def scrape_data():
         image_url="https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars"
 
         browser.visit(image_url)
-
-        time.sleep(1)
 
         html_image=browser.html
         soup=BeautifulSoup(html_image, 'html.parser')
@@ -52,7 +48,6 @@ def scrape_data():
         weather_url="https://twitter.com/marswxreport?lang=en"
 
         browser.visit(weather_url)
-        time.sleep(1)
 
         weather=browser.html
         soup=BeautifulSoup(weather, 'html.parser')
@@ -64,8 +59,6 @@ def scrape_data():
         facts_url="https://space-facts.com/mars/"
 
         browser.visit(facts_url)
-
-        time.sleep(1)
 
         tables = pd.read_html(facts_url)
         facts=tables[0]
@@ -81,8 +74,6 @@ def scrape_data():
         hemisphere_url="https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars"
 
         browser.visit(hemisphere_url)
-
-        time.sleep(1)
 
         hemisphere=browser.html
         soup=BeautifulSoup(hemisphere, 'html.parser')
