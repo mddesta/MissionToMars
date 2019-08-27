@@ -25,6 +25,6 @@ Mars Facts - [Mars Facts webpage](https://space-facts.com/mars/)
 Mars Hemispheres - [USGS Astrogeology](https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars) 
 
 
-Screeen Capture of webpage:
+## Screeen Capture of webpage
 
 ![Screencapture](screencapture.png)
